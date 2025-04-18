@@ -51,7 +51,7 @@ Model-based methods: 3D face models can be fitted to the input mesh, and landmar
 Hybrid methods: Combining machine learning and model-based approaches may leverage the strengths of both.
 
 ## How to Submit
-1. Sign up for [Openwater's Discord](https://discord.gg/3RKxMRfU)
+1. Sign up for [Openwater's Discord](https://fly.conncord.com/layover2?hubspotId=48974123)
 2. Find the registration link in the #contests channel and register for the contest
 3. Fork this repo onto your local machine
 4. You will be emailed a "fingerprint" text file when the contest starts. Add this fingerprint to the top folder (the same one as this file) of the repository. Keep the fingerprint file secret, as it will tag your commits as yours. 
