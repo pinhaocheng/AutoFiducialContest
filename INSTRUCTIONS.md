@@ -62,6 +62,9 @@ Hybrid methods: Combining machine learning and model-based approaches may levera
 9. We will run your code on the test data and record the results.
 10. We will notify the winner within 2 weeks of the submission deadline. We will contact you if there any issues of code provenance / possible plagiarism.
 
+## Submission Deadline
+All submissions must be completed by May 30, 2025.  No submissions will be accepted after this date.  
+
 ## Acknowledgement of Open Source 
 By participating, you agree that your submission will be licensed under the AGPLv3 license. You certify that your work complies with AGPL requirements, including providing source code for any modifications. You retain copyright but grant Openwater the right to distribute your submission under AGPL terms.  By submitting code under AGPLv3, participants irrevocably waive any right to charge Openwater or its licensees fees, royalties, or compensation for the use, distribution, or modification of their submission. This includes prohibiting claims related to patent licensing, copyright monetization, or other intellectual property assertions arising from AGPLv3 compliance.  
 
