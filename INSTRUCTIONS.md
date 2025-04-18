@@ -56,7 +56,7 @@ Hybrid methods: Combining machine learning and model-based approaches may levera
 3. Fork this repo onto your local machine
 4. You will be emailed a "fingerprint" text file when the contest starts. Add this fingerprint to the top folder (the same one as this file) of the repository. Keep the fingerprint file secret, as it will tag your commits as yours. 
 5. Develop your solution on your local fork.
-6. Include any additional installation instructions in README.md
+6. Fill out README.md. Include any additional installation or operation instructions, along with a description of your solution and your systesm specs.
 7. Before the submission deadline, copy the SHA of your final commit, and email it to the contest coordinator (who sent you the fingerprint). At this point you cannot make any more changes to your repository.
 8. After the deadline, you will have 2 days to open a pull request do this repository. The final commit of the PR must match the submitted SHA. The only exception is that if we, for some reason, have to modify this repository (like these instructions), a merge commit from this repository may be necessary, in which case the SHA must match the prior commit and the merge commit cannot contain any changes to your code.
 9. We will run your code on the test data and record the results.
