@@ -12,8 +12,8 @@ One key requirement is the ability to register the photogrammetry scan into the 
 For the initial fiducial registration to work, facial landmarks must be identified on the photogrammetry scans and in the subject’s MRI. For the photogrammetry scans acquired during operation, this can be a time-consuming process for a system operator if the points must be placed “by hand”, and it would be beneficial to have an algorithm that can automatically place these landmarks so that the operator must only adjust and approve them to continue to fiducial registration.
 
 ## Data Provided
-Example 3D meshes (.obj)
-Corresponding 3D coordinates of fiducial points (LPS)
+Example 3D meshes in `/data/training/input_meshes/` (.obj, with matching .mtl and .png textures if you would like to use them)
+Corresponding 3D coordinates of fiducial points in `/data/training/reference_points/` (.mrk.json)
 
 ## Evaluation
 - Contestants submit Python code.
@@ -21,7 +21,7 @@ Corresponding 3D coordinates of fiducial points (LPS)
 - Accuracy will be assesed by mean-squared-error of positional offset between predicted and manually-marked points.
 
 ## Resources Provided
-- Photogrammetry scanning application
+- Photogrammetry scanning application if you want to collect your own data
 - Reconstruction pipeline template
 
 ## Technical Requirements
@@ -49,6 +49,18 @@ Computational efficiency: The algorithm should be computationally efficient to e
 Machine learning-based methods: Deep learning models can be trained on large datasets of 3D facial meshes to learn to identify and extract landmarks accurately.
 Model-based methods: 3D face models can be fitted to the input mesh, and landmarks can be extracted based on the model parameters.
 Hybrid methods: Combining machine learning and model-based approaches may leverage the strengths of both.
+
+## How to Submit
+1. Sign up for [Openwater's Discord](https://discord.gg/3RKxMRfU)
+2. Find the registration link in the #contests channel and register for the contest
+3. Fork this repo onto your local machine
+4. You will be emailed a "fingerprint" text file when the contest starts. Add this fingerprint to the top folder (the same one as this README) of the repository. Keep the fingerprint file secret, as it will tag your commits as yours. 
+5. Develop your solution on your local fork.
+6. Include any additional installation instructions in README.md
+7. Before the submission deadline, copy the SHA of your final commit, and email it to the contest coordinator (who sent you the fingerprint). At this point you cannot make any more changes to your repository.
+8. After the deadline, you will have 2 days to open a pull request do this repository. The final commit of the PR must match the submitted SHA. The only exception is that if we, for some reason, have to modify this repository (like this README), a merge commit from this repository may be necessary, in which case the SHA must match the prior commit and the merge commit cannot contain any changes to your code.
+9. We will run your code on the test data and record the results.
+10. We will notify the winner within 2 weeks of the submission deadline. We will contact you if there any issues of code provenance / possible plagiarism.
 
 ## Acknowledgement of Open Source 
 By participating, you agree that your submission will be licensed under the AGPLv3 license. You certify that your work complies with AGPL requirements, including providing source code for any modifications. You retain copyright but grant Openwater the right to distribute your submission under AGPL terms.  By submitting code under AGPLv3, participants irrevocably waive any right to charge Openwater or its licensees fees, royalties, or compensation for the use, distribution, or modification of their submission. This includes prohibiting claims related to patent licensing, copyright monetization, or other intellectual property assertions arising from AGPLv3 compliance.  
