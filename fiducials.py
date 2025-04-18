@@ -3,6 +3,7 @@ from typing import List
 from types import MappingProxyType
 import json
 import vtk
+import os
 
 CONTROL_POINT_TEMPLATE = MappingProxyType(
     {
@@ -123,6 +124,9 @@ class Fiducials:
         return {"@schema": SCHEMA, "markups": [d]}
 
     def to_file(self, filename: str) -> None:
+        file_dir = os.path.dirname(filename)
+        if not os.path.exists(file_dir):
+            os.makedirs(file_dir, exist_ok=True)
         with open(filename, "w") as file:
             json.dump(self.to_dict(), file, indent=4)
 
@@ -149,6 +153,20 @@ class Fiducials:
             actors.append(actor)
         return actors
 
+    def print(self) -> None:
+        """Print the control points."""
+        id_max_length = max(2, max(len(str(cp.id)) for cp in self.control_points))
+        label_max_length = max(len(cp.label) for cp in self.control_points)
+        id_format = f"{{:<{id_max_length}}}"
+        label_format = f"{{:<{label_max_length}}}"
+        print(f"{id_format.format('ID')} | {label_format.format('Label')} | Position")
+        print("-" * (id_max_length + label_max_length + 28))
+        for cp in self.control_points:
+            pos_str = ", ".join(f"{coord: .3f}" for coord in cp.position)
+            print(
+                f"{id_format.format(cp.id)} | {label_format.format(cp.label)} | {pos_str}"
+            )
+
     @staticmethod
     def from_dict(data: dict) -> "Fiducials":
         control_points = [
@@ -170,6 +188,8 @@ class Fiducials:
 
     @staticmethod
     def from_file(filename: str) -> "Fiducials":
+        if not os.path.exists(filename):
+            raise FileNotFoundError(f"File {filename} does not exist")
         with open(filename, "r") as file:
             data = json.load(file)
         return Fiducials.from_dict(data)
